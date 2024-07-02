@@ -1,20 +1,24 @@
 package com.upc.appProductos.entidades;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
 @Entity
-@Table(name = "tb_practica")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Practica {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String codPractica;
-    private Long idCurso;
-    private Double pesoPractica;
-    private Long idEstado;
+    private Long idPractica;
 
-    // Getters and Setters
+    private String codPractica;
+    private double pesoPractica;
+
+    @ManyToOne
+    @JoinColumn(name = "id_curso")
+    private Curso curso;
 }

@@ -128,3 +128,440 @@ Caused by: java.lang.IllegalStateException: Cannot load driver class: org.h2.Dri
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
 	... 39 common frames omitted
+2024-07-01 19:27:01 - Starting AppProductosApplication using Java 21.0.3 with PID 31260 (C:\Users\mark_\Videos\proyecto\appNotasOSUPC\target\classes started by mark_ in C:\Users\mark_\Videos\proyecto\appNotasOSUPC)
+2024-07-01 19:27:01 - No active profile set, falling back to 1 default profile: "default"
+2024-07-01 19:27:01 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-01 19:27:01 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-01 19:27:02 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-01 19:27:02 - Finished Spring Data repository scanning in 50 ms. Found 1 JPA repository interface.
+2024-07-01 19:27:03 - Tomcat initialized with port 8080 (http)
+2024-07-01 19:27:03 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-01 19:27:03 - Starting service [Tomcat]
+2024-07-01 19:27:03 - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-01 19:27:03 - Initializing Spring embedded WebApplicationContext
+2024-07-01 19:27:03 - Root WebApplicationContext: initialization completed in 2102 ms
+2024-07-01 19:27:03 - HikariPool-1 - Starting...
+2024-07-01 19:27:03 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-07-01 19:27:03 - HikariPool-1 - Start completed.
+2024-07-01 19:27:03 - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-07-01 19:27:03 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-01 19:27:03 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-01 19:27:03 - HHH000026: Second-level cache disabled
+2024-07-01 19:27:04 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-01 19:27:04 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-01 19:27:05 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-01 19:27:05 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-01 19:27:06 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-01 19:27:06 - LiveReload server is running on port 35729
+2024-07-01 19:27:07 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-01 19:27:07 - Tomcat started on port 8080 (http) with context path ''
+2024-07-01 19:27:07 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-07-01 19:27:07 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'
+2024-07-01 19:27:07 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-01 19:27:07 - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-07-01 19:27:07 - HikariPool-1 - Shutdown initiated...
+2024-07-01 19:27:07 - HikariPool-1 - Shutdown completed.
+2024-07-01 19:27:07 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-07-01 19:27:07 - Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:291)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:471)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:260)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:981)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.upc.appProductos.AppProductosApplication.main(AppProductosApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.NullPointerException: Cannot invoke "org.springframework.web.servlet.mvc.condition.PatternsRequestCondition.getPatterns()" because "this.condition" is null
+	at springfox.documentation.spring.web.WebMvcPatternsRequestConditionWrapper.getPatterns(WebMvcPatternsRequestConditionWrapper.java:56)
+	at springfox.documentation.RequestHandler.sortedPaths(RequestHandler.java:113)
+	at springfox.documentation.spi.service.contexts.Orderings.lambda$byPatternsCondition$3(Orderings.java:89)
+	at java.base/java.util.Comparator.lambda$comparing$77a9974f$1(Comparator.java:473)
+	at java.base/java.util.TimSort.countRunAndMakeAscending(TimSort.java:355)
+	at java.base/java.util.TimSort.sort(TimSort.java:220)
+	at java.base/java.util.Arrays.sort(Arrays.java:1308)
+	at java.base/java.util.ArrayList.sort(ArrayList.java:1804)
+	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:392)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:261)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:261)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:261)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:261)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider.requestHandlers(WebMvcRequestHandlerProvider.java:81)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.withDefaults(AbstractDocumentationPluginsBootstrapper.java:107)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.buildContext(AbstractDocumentationPluginsBootstrapper.java:91)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82)
+	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:288)
+	... 16 common frames omitted
+2024-07-01 19:33:13 - Starting AppProductosApplication using Java 21.0.3 with PID 19400 (C:\Users\mark_\Videos\proyecto\appNotasOSUPC\target\classes started by mark_ in C:\Users\mark_\Videos\proyecto\appNotasOSUPC)
+2024-07-01 19:33:13 - No active profile set, falling back to 1 default profile: "default"
+2024-07-01 19:33:13 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-01 19:33:13 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-01 19:33:14 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-01 19:33:14 - Finished Spring Data repository scanning in 44 ms. Found 1 JPA repository interface.
+2024-07-01 19:33:15 - Tomcat initialized with port 8080 (http)
+2024-07-01 19:33:15 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-01 19:33:15 - Starting service [Tomcat]
+2024-07-01 19:33:15 - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-01 19:33:15 - Initializing Spring embedded WebApplicationContext
+2024-07-01 19:33:15 - Root WebApplicationContext: initialization completed in 1505 ms
+2024-07-01 19:33:15 - HikariPool-1 - Starting...
+2024-07-01 19:33:15 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-07-01 19:33:15 - HikariPool-1 - Start completed.
+2024-07-01 19:33:15 - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-07-01 19:33:15 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-01 19:33:15 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-01 19:33:15 - HHH000026: Second-level cache disabled
+2024-07-01 19:33:15 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-01 19:33:15 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-01 19:33:16 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-01 19:33:16 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-01 19:33:17 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-01 19:33:17 - LiveReload server is running on port 35729
+2024-07-01 19:33:17 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-01 19:33:17 - Tomcat started on port 8080 (http) with context path ''
+2024-07-01 19:33:17 - Started AppProductosApplication in 4.534 seconds (process running for 5.024)
+2024-07-01 19:33:25 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-01 19:33:25 - Initializing Servlet 'dispatcherServlet'
+2024-07-01 19:33:25 - Completed initialization in 1 ms
+2024-07-01 19:33:25 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.StringIndexOutOfBoundsException: Range [23, 22) out of bounds for length 22] with root cause
+java.lang.StringIndexOutOfBoundsException: Range [23, 22) out of bounds for length 22
+	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:55)
+	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:52)
+	at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:213)
+	at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:210)
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:98)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckFromToIndex(Preconditions.java:112)
+	at java.base/jdk.internal.util.Preconditions.checkFromToIndex(Preconditions.java:349)
+	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4865)
+	at java.base/java.lang.String.substring(String.java:2834)
+	at java.base/java.lang.String.substring(String.java:2807)
+	at org.springdoc.ui.AbstractSwaggerResourceResolver.path(AbstractSwaggerResourceResolver.java:71)
+	at org.springdoc.ui.AbstractSwaggerResourceResolver.findWebJarResourcePath(AbstractSwaggerResourceResolver.java:42)
+	at org.springdoc.webmvc.ui.SwaggerResourceResolver.resolveResource(SwaggerResourceResolver.java:33)
+	at org.springframework.web.servlet.resource.DefaultResourceResolverChain.resolveResource(DefaultResourceResolverChain.java:75)
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.getResource(ResourceHttpRequestHandler.java:654)
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:582)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-07-01 19:34:06 - Init duration for springdoc-openapi is: 333 ms
+2024-07-01 19:36:26 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.orm.jpa.JpaObjectRetrievalFailureException: Unable to find com.upc.appProductos.entidades.Alumno with id 0] with root cause
+jakarta.persistence.EntityNotFoundException: Unable to find com.upc.appProductos.entidades.Alumno with id 0
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$JpaEntityNotFoundDelegate.handleEntityNotFound(EntityManagerFactoryBuilderImpl.java:191)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:212)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadWithRegularProxy(DefaultLoadEventListener.java:290)
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:242)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:111)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:68)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138)
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1222)
+	at org.hibernate.internal.SessionImpl.internalLoad(SessionImpl.java:1068)
+	at org.hibernate.type.EntityType.resolveIdentifier(EntityType.java:694)
+	at org.hibernate.type.EntityType.resolve(EntityType.java:417)
+	at org.hibernate.type.EntityType.replace(EntityType.java:340)
+	at org.hibernate.type.AbstractType.replace(AbstractType.java:125)
+	at org.hibernate.type.TypeHelper.replace(TypeHelper.java:154)
+	at org.hibernate.event.internal.DefaultMergeEventListener.copyValues(DefaultMergeEventListener.java:614)
+	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsTransient(DefaultMergeEventListener.java:296)
+	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsDetached(DefaultMergeEventListener.java:418)
+	at org.hibernate.event.internal.DefaultMergeEventListener.merge(DefaultMergeEventListener.java:208)
+	at org.hibernate.event.internal.DefaultMergeEventListener.doMerge(DefaultMergeEventListener.java:146)
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:130)
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:84)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.fireMerge(SessionImpl.java:847)
+	at org.hibernate.internal.SessionImpl.merge(SessionImpl.java:833)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:364)
+	at jdk.proxy4/jdk.proxy4.$Proxy112.merge(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:319)
+	at jdk.proxy4/jdk.proxy4.$Proxy112.merge(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:621)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy4/jdk.proxy4.$Proxy117.save(Unknown Source)
+	at com.upc.appProductos.negocio.NotaService.save(NotaService.java:26)
+	at com.upc.appProductos.rest.NotaRest.createNota(NotaRest.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-07-01 19:45:04 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-01 19:45:04 - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-07-01 19:45:04 - HikariPool-1 - Shutdown initiated...
+2024-07-01 19:45:04 - HikariPool-1 - Shutdown completed.
+2024-07-01 20:01:26 - Starting AppProductosApplication using Java 21.0.3 with PID 32476 (C:\Users\mark_\Videos\proyecto\appNotasOSUPC\target\classes started by mark_ in C:\Users\mark_\Videos\proyecto\appNotasOSUPC)
+2024-07-01 20:01:26 - No active profile set, falling back to 1 default profile: "default"
+2024-07-01 20:01:26 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-01 20:01:26 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-01 20:01:27 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-01 20:01:27 - Finished Spring Data repository scanning in 53 ms. Found 7 JPA repository interfaces.
+2024-07-01 20:01:28 - Tomcat initialized with port 8080 (http)
+2024-07-01 20:01:28 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-01 20:01:28 - Starting service [Tomcat]
+2024-07-01 20:01:28 - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-01 20:01:28 - Initializing Spring embedded WebApplicationContext
+2024-07-01 20:01:28 - Root WebApplicationContext: initialization completed in 1675 ms
+2024-07-01 20:01:28 - HikariPool-1 - Starting...
+2024-07-01 20:01:28 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-07-01 20:01:28 - HikariPool-1 - Start completed.
+2024-07-01 20:01:28 - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-07-01 20:01:28 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-01 20:01:28 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-01 20:01:28 - HHH000026: Second-level cache disabled
+2024-07-01 20:01:28 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-01 20:01:29 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-01 20:01:29 - Failed to initialize JPA EntityManagerFactory: Entity 'com.upc.appProductos.entidades.Curso' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-07-01 20:01:29 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'com.upc.appProductos.entidades.Curso' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-07-01 20:01:29 - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-07-01 20:01:29 - HikariPool-1 - Shutdown initiated...
+2024-07-01 20:01:29 - HikariPool-1 - Shutdown completed.
+2024-07-01 20:01:29 - Stopping service [Tomcat]
+2024-07-01 20:01:29 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-07-01 20:01:29 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'com.upc.appProductos.entidades.Curso' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.upc.appProductos.AppProductosApplication.main(AppProductosApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.hibernate.AnnotationException: Entity 'com.upc.appProductos.entidades.Curso' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.hibernate.boot.model.internal.InheritanceState.determineDefaultAccessType(InheritanceState.java:279)
+	at org.hibernate.boot.model.internal.InheritanceState.getElementsToProcess(InheritanceState.java:215)
+	at org.hibernate.boot.model.internal.InheritanceState.postProcess(InheritanceState.java:160)
+	at org.hibernate.boot.model.internal.EntityBinder.handleIdentifier(EntityBinder.java:348)
+	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:237)
+	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:423)
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:256)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:279)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:322)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 19 common frames omitted
+2024-07-01 20:06:06 - Starting AppProductosApplication using Java 21.0.3 with PID 17640 (C:\Users\mark_\Videos\proyecto\appNotasOSUPC\target\classes started by mark_ in C:\Users\mark_\Videos\proyecto\appNotasOSUPC)
+2024-07-01 20:06:06 - No active profile set, falling back to 1 default profile: "default"
+2024-07-01 20:06:06 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-01 20:06:06 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-01 20:06:06 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-01 20:06:06 - Finished Spring Data repository scanning in 55 ms. Found 7 JPA repository interfaces.
+2024-07-01 20:06:07 - Tomcat initialized with port 8080 (http)
+2024-07-01 20:06:07 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-01 20:06:07 - Starting service [Tomcat]
+2024-07-01 20:06:07 - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-01 20:06:07 - Initializing Spring embedded WebApplicationContext
+2024-07-01 20:06:07 - Root WebApplicationContext: initialization completed in 1574 ms
+2024-07-01 20:06:07 - HikariPool-1 - Starting...
+2024-07-01 20:06:07 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-07-01 20:06:07 - HikariPool-1 - Start completed.
+2024-07-01 20:06:07 - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-07-01 20:06:08 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-01 20:06:08 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-01 20:06:08 - HHH000026: Second-level cache disabled
+2024-07-01 20:06:08 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-01 20:06:08 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-01 20:06:09 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-01 20:06:09 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-01 20:06:09 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-01 20:06:10 - LiveReload server is running on port 35729
+2024-07-01 20:06:10 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-01 20:06:10 - Tomcat started on port 8080 (http) with context path ''
+2024-07-01 20:06:10 - Started AppProductosApplication in 4.687 seconds (process running for 5.11)
+2024-07-01 20:06:42 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-01 20:06:42 - Initializing Servlet 'dispatcherServlet'
+2024-07-01 20:06:42 - Completed initialization in 1 ms
+2024-07-01 20:13:31 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-01 20:13:31 - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-07-01 20:13:31 - HikariPool-1 - Shutdown initiated...
+2024-07-01 20:13:31 - HikariPool-1 - Shutdown completed.
+2024-07-01 20:13:34 - Starting AppProductosApplication using Java 21.0.3 with PID 3432 (C:\Users\mark_\Videos\proyecto\appNotasOSUPC\target\classes started by mark_ in C:\Users\mark_\Videos\proyecto\appNotasOSUPC)
+2024-07-01 20:13:34 - No active profile set, falling back to 1 default profile: "default"
+2024-07-01 20:13:34 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-01 20:13:34 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-01 20:13:35 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-01 20:13:35 - Finished Spring Data repository scanning in 70 ms. Found 7 JPA repository interfaces.
+2024-07-01 20:13:36 - Tomcat initialized with port 8080 (http)
+2024-07-01 20:13:36 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-01 20:13:36 - Starting service [Tomcat]
+2024-07-01 20:13:36 - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-01 20:13:36 - Initializing Spring embedded WebApplicationContext
+2024-07-01 20:13:36 - Root WebApplicationContext: initialization completed in 1682 ms
+2024-07-01 20:13:36 - HikariPool-1 - Starting...
+2024-07-01 20:13:36 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-07-01 20:13:36 - HikariPool-1 - Start completed.
+2024-07-01 20:13:36 - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-07-01 20:13:36 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-01 20:13:36 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-01 20:13:36 - HHH000026: Second-level cache disabled
+2024-07-01 20:13:36 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-01 20:13:37 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-01 20:13:37 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-01 20:13:37 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-01 20:13:38 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-01 20:13:38 - LiveReload server is running on port 35729
+2024-07-01 20:13:38 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-01 20:13:38 - Tomcat started on port 8080 (http) with context path ''
+2024-07-01 20:13:38 - Started AppProductosApplication in 4.755 seconds (process running for 5.2)
+2024-07-01 20:40:18 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-01 20:40:18 - Initializing Servlet 'dispatcherServlet'
+2024-07-01 20:40:18 - Completed initialization in 1 ms

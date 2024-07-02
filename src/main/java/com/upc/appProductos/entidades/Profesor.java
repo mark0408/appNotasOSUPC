@@ -9,16 +9,16 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Alumno {
+public class Profesor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idAlumno;
+    private Long idProfesor;
 
-    private String codAlumno;
-    private String nombre;
+    private String codProfesor;
+    private String nombreProfesor;
     private String apePat;
     private String apeMat;
-    private String fechaNac;
-    private int anioIngreso;
+    private String fechaNacimiento;
+    private int anioContratacion;
 }

@@ -1,21 +1,27 @@
 package com.upc.appProductos.entidades;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
 @Entity
-@Table(name = "tb_seccion")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Seccion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String codSeccion;
-    private Long idCurso;
-    private Long idSyllabus;
-    private Long idProfesor;
-    private Long idEstado;
+    private Long idSeccion;
 
-    // Getters and Setters
+    private String codSeccion;
+
+    @ManyToOne
+    @JoinColumn(name = "id_curso")
+    private Curso curso;
+
+    @ManyToOne
+    @JoinColumn(name = "id_profesor")
+    private Profesor profesor;
 }
